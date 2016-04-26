@@ -649,8 +649,8 @@
   margin-bottom: 44px;
   padding-right: 0px;
   padding-left: 0px;
-  font-size: 28px;
-  line-height: 44px;
+  font-size: 27px;
+  line-height: 41px;
   letter-spacing: 0px;
 }
 
@@ -1226,6 +1226,9 @@ html.w-mod-js *[data-ix="show-modal"] {
   .wmg-logo-large {
     width: 88%;
   }
+  .section-heading {
+    font-size: 60px;
+  }
   .section-heading.whitesmoke {
     padding-bottom: 0px;
     line-height: 55px;
@@ -1264,6 +1267,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     margin-bottom: 33px;
     font-size: 44px;
     line-height: 55px;
+    text-align: center;
   }
   .service-subhead.top-space {
     margin-top: 77px;
