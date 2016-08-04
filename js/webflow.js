@@ -461,12 +461,40 @@
 	// shim for using process in browser
 
 	var process = module.exports = {};
+
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+
+	(function () {
+	  try {
+	    cachedSetTimeout = setTimeout;
+	  } catch (e) {
+	    cachedSetTimeout = function () {
+	      throw new Error('setTimeout is not defined');
+	    }
+	  }
+	  try {
+	    cachedClearTimeout = clearTimeout;
+	  } catch (e) {
+	    cachedClearTimeout = function () {
+	      throw new Error('clearTimeout is not defined');
+	    }
+	  }
+	} ())
 	var queue = [];
 	var draining = false;
 	var currentQueue;
 	var queueIndex = -1;
 
 	function cleanUpNextTick() {
+	    if (!draining || !currentQueue) {
+	        return;
+	    }
 	    draining = false;
 	    if (currentQueue.length) {
 	        queue = currentQueue.concat(queue);
@@ -482,7 +510,7 @@
 	    if (draining) {
 	        return;
 	    }
-	    var timeout = setTimeout(cleanUpNextTick);
+	    var timeout = cachedSetTimeout(cleanUpNextTick);
 	    draining = true;
 
 	    var len = queue.length;
@@ -499,7 +527,7 @@
 	    }
 	    currentQueue = null;
 	    draining = false;
-	    clearTimeout(timeout);
+	    cachedClearTimeout(timeout);
 	}
 
 	process.nextTick = function (fun) {
@@ -511,7 +539,7 @@
 	    }
 	    queue.push(new Item(fun, args));
 	    if (queue.length === 1 && !draining) {
-	        setTimeout(drainQueue, 0);
+	        cachedSetTimeout(drainQueue, 0);
 	    }
 	};
 
@@ -2591,6 +2619,7 @@
 	  var google = null;
 	  var $maps;
 	  var namespace = '.w-widget-map';
+	  var apiKey = 'AIzaSyBks0W0NawnPju70JQS5XXPOTTrguDQjWE';
 
 	  // -----------------------------------
 	  // Module methods
@@ -2637,7 +2666,7 @@
 	    if (!$maps.length) return;
 
 	    if (google === null) {
-	      $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=_wf_maps_loaded');
+	      $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=_wf_maps_loaded&key=' + apiKey);
 	      window._wf_maps_loaded = mapsLoaded;
 	    } else {
 	      mapsLoaded();
@@ -3107,7 +3136,7 @@
 	    data.open = false;
 	    data.button.removeClass(buttonOpen);
 	    var config = data.config;
-	    if (config.animation === 'none' || !tram.support.transform) immediate = true;
+	    if (config.animation === 'none' || !tram.support.transform || config.duration <= 0) immediate = true;
 	    ix.outro(0, data.el[0]);
 
 	    // Stop listening for tap outside events
