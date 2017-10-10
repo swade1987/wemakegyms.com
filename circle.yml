@@ -4,6 +4,11 @@ defaults: &defaults
   docker:
     - image: docker:17.05.0-ce-git
 
+general:
+  branches:
+    only:
+      - master
+
 jobs:
   build:
     <<: *defaults
