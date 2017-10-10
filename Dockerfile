@@ -12,6 +12,4 @@ LABEL git.branch=$git_branch
 LABEL build.dockerfile=/Dockerfile
 LABEL build.on=$built_on
 
-COPY ./Dockerfile /Dockerfile
-
 ADD www /usr/share/nginx/html

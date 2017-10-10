@@ -1,6 +1,6 @@
 version: 2
 defaults: &defaults
-  working_directory: /root/app
+  working_directory: ~
   docker:
     - image: docker:17.05.0-ce-git
 
