@@ -3,9 +3,13 @@ machine:
   services:
     - docker
 
-dependencies:
-  pre:
-    - make build
+jobs:
+  build:
+    steps:
+      - checkout
+      - run:
+          name: build docker image
+          command: make build
 
 deployment:
     branch: master
