@@ -2,7 +2,7 @@ version: 2
 defaults: &defaults
   working_directory: ~
   docker:
-    - image: circleci/build-image
+    - image: utgarda/debian-build-essentials-git
 
 jobs:
   build:
