@@ -1,0 +1,14 @@
+version: 2
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - make build
+
+deployment:
+    branch: master
+    commands:
+      - make login
+      - make push
