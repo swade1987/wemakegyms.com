@@ -2,7 +2,7 @@ version: 2
 defaults: &defaults
   working_directory: ~
   docker:
-    - image: mugen/ubuntu-build-essential
+    - image: circleci/build-image
 
 jobs:
   build:
