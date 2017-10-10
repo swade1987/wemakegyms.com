@@ -2,7 +2,7 @@ version: 2
 defaults: &defaults
   working_directory: ~
   docker:
-    - image: utgarda/debian-build-essentials-git
+    - image: docker:17.05.0-ce-git
 
 jobs:
   build:
@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install dependencies
+          command: apt-get install -y build-essential git
+      - build:
           name: build docker image
           command: make build
 
