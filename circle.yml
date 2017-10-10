@@ -1,10 +1,12 @@
 version: 2
-machine:
-  services:
-    - docker
+defaults: &defaults
+  working_directory: ~
+  docker:
+    - image: mugen/ubuntu-build-essential
 
 jobs:
   build:
+    <<: *defaults
     steps:
       - checkout
       - run:
