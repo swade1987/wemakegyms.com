@@ -1150,7 +1150,10 @@ html.w-mod-js *[data-ix="show-modal"] {
     margin-bottom: 55px;
   }
   .section-heading.inline-block.bottom-space {
-    margin-bottom: 55px;
+    margin-top: 33px;
+    margin-bottom: 33px;
+    font-size: 50px;
+    line-height: 55px;
   }
   .para-text.x.centre {
     font-size: 16px;
@@ -1324,7 +1327,8 @@ html.w-mod-js *[data-ix="show-modal"] {
   }
   .section-heading.inline-block.bottom-space {
     margin-bottom: 44px;
-    font-size: 66px;
+    font-size: 34px;
+    line-height: 38px;
   }
   .para-text.x {
     margin-bottom: 0px;
