@@ -434,13 +434,13 @@
   top: 0px;
   right: 0px;
   display: inline-block;
-  width: 242px;
+  width: 252px;
   margin-right: auto;
   margin-left: 16px;
   padding-top: 33px;
   float: none;
   opacity: 1;
-  text-align: right;
+  text-align: left;
 }
 
 .phone-text {
@@ -1383,7 +1383,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     margin-left: 11px;
   }
   .testmonial-text {
-    width: 88%;
+    width: 77%;
   }
   .testmonial-text.space-below {
     font-size: 16px;
