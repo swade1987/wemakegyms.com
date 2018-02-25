@@ -14,11 +14,14 @@ IMAGE = quay.io/$(QUAY_REPO)/$(APP_NAME)
 
 build:
 	docker build \
-    --build-arg git_repository=`git config --get remote.origin.url` \
-    --build-arg git_branch=`git rev-parse --abbrev-ref HEAD` \
-    --build-arg git_commit=`git rev-parse HEAD` \
-    --build-arg built_on=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-    -t $(IMAGE):$(VERSION) .
+	--build-arg git_repository=`git config --get remote.origin.url` \
+	--build-arg git_branch=`git rev-parse --abbrev-ref HEAD` \
+	--build-arg git_commit=`git rev-parse HEAD` \
+	--build-arg built_on=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+	-t $(IMAGE):$(VERSION) .
+
+run:
+	docker run -d -p 80:80 $(IMAGE):$(VERSION)
 
 login:
 	docker login -u $(QUAY_USERNAME) -p $(QUAY_PASSWORD) quay.io
