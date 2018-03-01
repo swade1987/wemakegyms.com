@@ -27,3 +27,8 @@ jobs:
       - run:
           name: push image to quay.io
           command: make push
+
+deployment:
+  prod:
+    branch: master
+    commands: make deploy
