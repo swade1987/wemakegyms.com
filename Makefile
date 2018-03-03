@@ -34,7 +34,7 @@ push:
 	docker rmi $(IMAGE)
 
 deploy:
-	ssh $(SERVER_USER)@$(SERVER_NAME).stevenwade.co.uk
+	ssh -o "StrictHostKeyChecking no" $(SERVER_USER)@$(SERVER_NAME).stevenwade.co.uk
 	docker rm -fv www.wemakegyms.com
 	docker run -d \
 	--restart=always -p 80 \
