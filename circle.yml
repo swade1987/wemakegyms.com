@@ -32,6 +32,9 @@ jobs:
     <<: *defaults
     steps:
       - run:
+          name: install dependencies
+          command: apk add --update alpine-sdk
+      - run:
           name: deploy the new container image to server
           command: make deploy 
 
