@@ -28,7 +28,21 @@ jobs:
           name: push image to quay.io
           command: make push
 
-deployment:
-  prod:
-    branch: master
-    commands: make deploy
+  deploy:
+    <<: *defaults
+    steps:
+      - run:
+          name: deploy the new container image to server
+          command: make deploy 
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            -build
+          filters:
+            branches:
+              only: master
