@@ -34,8 +34,8 @@ push:
 	docker rmi $(IMAGE)
 
 deploy:
-	ssh -o "StrictHostKeyChecking no" $(SERVER_USER)@$(SERVER_NAME).stevenwade.co.uk
-	docker rm -fv www.wemakegyms.com
+	ssh -o "StrictHostKeyChecking no" $(SERVER_USER)@$(SERVER_NAME).stevenwade.co.uk ' \
+	docker rm -fv www.wemakegyms.com && \
 	docker run -d \
 	--restart=always -p 80 \
 	--name www.wemakegyms.com \
@@ -45,3 +45,4 @@ deploy:
 	-l interlock.alias_domain.0=wemakegyms.com \
 	-v /data/challenges/.well-known/acme-challenge:/var/www/.well-known/acme-challenge:ro \
 	$(IMAGE)
+	'
