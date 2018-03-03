@@ -44,5 +44,4 @@ deploy:
 	-l interlock.domain=wemakegyms.com \
 	-l interlock.alias_domain.0=wemakegyms.com \
 	-v /data/challenges/.well-known/acme-challenge:/var/www/.well-known/acme-challenge:ro \
-	$(IMAGE)
-	'
+	$(IMAGE)'
