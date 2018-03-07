@@ -27,6 +27,3 @@ jobs:
       - run:
           name: push image to quay.io
           command: make push
-      - run:
-          name: deploy the new container image to server
-          command: make deploy
