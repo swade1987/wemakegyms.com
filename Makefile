@@ -32,3 +32,11 @@ login:
 push:
 	docker push $(IMAGE)
 	docker rmi $(IMAGE)
+
+test:
+	helm delete --purge $(APP_NAME) && \
+	helm upgrade --install $(APP_NAME) $(APP_NAME) --debug --dry-run
+
+deploy:
+	helm delete --purge $(APP_NAME) && \
+	helm upgrade --install $(APP_NAME) $(APP_NAME) --debug --force
