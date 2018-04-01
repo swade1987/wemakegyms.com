@@ -1,5 +1,5 @@
 FROM nginx:alpine
-MAINTAINER Steve Wade <steven@stevenwade.co.uk>
+LABEL maintainer="Steve Wade (steven@stevenwade.co.uk)"
 
 ARG git_repository="Unknown"
 ARG git_commit="Unknown"
