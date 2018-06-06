@@ -37,7 +37,7 @@
   min-width: auto;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 10vh;
+  padding-top: 13vh;
   -webkit-transition: all 666ms ease;
   transition: all 666ms ease;
 }
@@ -355,7 +355,7 @@
 
 .form-wrapper {
   display: block;
-  width: 55%;
+  width: 88%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -368,7 +368,7 @@
 }
 
 .field-text {
-  background-color: hsla(0, 0%, 96%, .77);
+  background-color: hsla(0, 0%, 96%, .89);
   font-family: Oswald, sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -400,7 +400,8 @@
   top: 0px;
   right: 0px;
   display: block;
-  width: 555px;
+  width: 666px;
+  margin-top: 33px;
   margin-right: auto;
   margin-left: auto;
   padding-top: auto;
@@ -434,28 +435,46 @@
   top: 0px;
   right: 0px;
   display: inline-block;
-  width: 252px;
-  margin-right: auto;
-  margin-left: 16px;
-  padding-top: 33px;
+  width: 242px;
+  margin-right: 21px;
+  margin-left: 21px;
+  padding-top: 0px;
   float: none;
   opacity: 1;
   text-align: left;
+}
+
+.phone-number.custom-spacing {
+  width: 100%;
+  margin-right: 222px;
+}
+
+.phone-number.custom-spacing.smaller {
+  display: none;
 }
 
 .phone-text {
   display: inline-block;
   margin-top: 0px;
   margin-bottom: 0px;
+  padding-top: 0px;
   font-family: Oswald, sans-serif;
   color: #f5f5f5;
-  font-size: 22px;
+  font-size: 21px;
   line-height: 20px;
   font-weight: 300;
 }
 
+.phone-text.mini {
+  margin-left: 7px;
+  font-size: 19px;
+  letter-spacing: 0em;
+}
+
 .phone-image {
-  margin-right: 16px;
+  margin-top: 0px;
+  margin-right: 7px;
+  padding-top: 0px;
   float: none;
 }
 
@@ -618,6 +637,13 @@
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.submit-button.indigo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(40, 54, 85, .55);
 }
 
 .section-subhead {
@@ -785,6 +811,10 @@
   height: 66px;
 }
 
+.body-wrapper {
+  letter-spacing: 0em;
+}
+
 .about-us-text {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
@@ -802,11 +832,15 @@
 .social-container-hero-section {
   display: inline-block;
   width: 100%;
-  margin-top: 22px;
+  margin-top: 19px;
   padding-right: 6px;
   padding-left: 6px;
-  float: right;
+  float: left;
   text-align: right;
+}
+
+.social-container-hero-section.indigo-back {
+  background-color: #283655;
 }
 
 .slide {
@@ -961,7 +995,7 @@
 }
 
 .image {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .image-2 {
@@ -990,6 +1024,50 @@
 
 .image-8 {
   margin-bottom: 8px;
+}
+
+.image-9 {
+  margin-bottom: 10px;
+}
+
+.mini-contact-form {
+  position: absolute;
+  top: 66px;
+  right: 0px;
+  display: block;
+  width: 222px;
+  margin-top: 0px;
+  float: right;
+  background-color: rgba(77, 100, 141, .74);
+  letter-spacing: 0.2em;
+}
+
+.mini-contact-form.circle {
+  position: relative;
+  border-radius: 306px;
+}
+
+.mini-contact-heading {
+  margin-bottom: 21px;
+  font-family: Oswald, sans-serif;
+  color: #f5f5f5;
+  font-weight: 200;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mini-phone-number {
+  display: block;
+  width: 88%;
+  margin: 21px auto 6px;
+  text-align: center;
+}
+
+.mini-image {
+  width: 33px;
+  max-width: auto;
+  margin-bottom: 5px;
+  letter-spacing: 0em;
 }
 
 html.w-mod-js *[data-ix="show-modal"] {
@@ -1070,22 +1148,38 @@ html.w-mod-js *[data-ix="show-modal"] {
   .service-button.indigo-ink {
     max-width: auto;
   }
+  .form-wrapper {
+    width: 88%;
+  }
+  .field-text {
+    font-size: 14px;
+  }
   .social-container {
     display: block;
-    width: 100%;
-    margin-right: auto;
+    width: 666px;
     margin-bottom: 44px;
-    margin-left: auto;
     padding-top: 33px;
-    float: left;
+    float: none;
+    text-align: center;
   }
   .phone-number {
     display: inline-block;
     width: auto;
+    margin-right: 21px;
+    margin-left: 21px;
     padding-top: 0px;
+    float: none;
+    text-align: center;
+  }
+  .phone-image.no-padding {
+    margin-right: 0px;
   }
   .testmonial-text {
     width: 66%;
+  }
+  .contact-div {
+    width: 66%;
+    text-align: center;
   }
   .services-wrapper {
     width: 88%;
@@ -1119,10 +1213,25 @@ html.w-mod-js *[data-ix="show-modal"] {
   .section-subhead.less-space-below.top-space {
     margin-top: 33px;
   }
+  .social-container-hero-section {
+    margin-top: 11px;
+  }
   .bullet-subhead-container {
     display: inline-block;
     padding-right: 33px;
     padding-left: 33px;
+  }
+  .mini-contact-form {
+    width: 191px;
+  }
+  .mini-contact-heading {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-size: 33px;
+    letter-spacing: 0.08em;
+  }
+  .mini-phone-number {
+    margin-top: 11px;
   }
 }
 
@@ -1200,6 +1309,16 @@ html.w-mod-js *[data-ix="show-modal"] {
   .contact-container {
     padding-top: 33px;
   }
+  .social-container {
+    width: auto;
+    margin-bottom: 0px;
+  }
+  .phone-number {
+    margin-right: 21px;
+  }
+  .phone-image {
+    margin-right: 0px;
+  }
   .slider {
     width: 100%;
     padding-right: 0px;
@@ -1226,7 +1345,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     float: none;
   }
   .contact-div {
-    width: 66%;
+    width: 88%;
   }
   .gallery-section {
     padding-top: 33px;
@@ -1379,8 +1498,16 @@ html.w-mod-js *[data-ix="show-modal"] {
     float: none;
   }
   .social-button {
+    width: 12%;
     margin-right: 11px;
     margin-left: 11px;
+  }
+  .phone-number {
+    width: 12%;
+    margin-right: 21px;
+  }
+  .phone-image {
+    width: 87%;
   }
   .testmonial-text {
     width: 77%;
