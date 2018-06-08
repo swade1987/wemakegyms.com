@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Tue Jun 05 2018 15:58:07 GMT+0000 (UTC)  -->
+<!--  Last Published: Fri Jun 08 2018 17:01:44 GMT+0000 (UTC)  -->
 <html data-wf-page="56e03264ffe381862048fdd6" data-wf-site="569a43983f3e7eba55729870">
 <head>
   <meta charset="utf-8">
@@ -22,13 +22,18 @@
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
 </head>
 <body class="body-wrapper">
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav"><a href="#hero-section" class="w-clearfix w-nav-brand"><img src="images/wmg-logo-simple.png" class="brand-logo-simple"></a>
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav"><a href="#hero-section" class="brand-2 w-clearfix w-nav-brand"><img src="images/wmg-logo-simple.png" class="brand-logo-simple"></a>
     <nav role="navigation" class="w-nav-menu"><a href="#hero-section" class="nav-link w-nav-link">Home</a><a href="#services-section" class="nav-link w-nav-link">Services</a><a href="#portfolio-section" class="nav-link w-nav-link">PORTFOLIO</a><a href="#gallery-section" class="nav-link w-nav-link">gallery</a><a href="#contact-section" class="nav-link w-nav-link">Contact</a></nav>
-    <div class="w-nav-button">
+    <div class="menu-button w-nav-button">
       <div class="w-icon-nav-menu"></div>
     </div>
   </div>
-  <div class="nav-section"></div>
+  <div data-w-id="37667778-f217-6acb-1c9b-4b103f7ded38" class="social-container-hero-section w-hidden-main w-hidden-medium">
+    <h1 class="mini-contact-heading">Contact us</h1><a target="_blank" href="#contact-section" class="social-button w-inline-block"><img src="images/email-icon-white-48x48.png" data-w-id="37667778-f217-6acb-1c9b-4b103f7ded3a" class="image-9"></a>
+    <div class="phone-number"><a href="tel:+447988708750" class="phone-image w-inline-block"><img src="images/phone-icon-white.png" data-w-id="37667778-f217-6acb-1c9b-4b103f7ded3d" class="image"></a>
+      <p class="phone-text w-hidden-medium w-hidden-small w-hidden-tiny">+44 (0) 7988 708 750</p>
+    </div>
+  </div>
   <div id="hero-section" class="hero-section w-clearfix">
     <div data-w-id="d67a40f6-7bc6-44f0-7488-a338ede8b9e1" style="-webkit-transform:translateX(222PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(222PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(222PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(222PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)" class="mini-contact-form w-hidden-small w-hidden-tiny">
       <h1 class="mini-contact-heading">Contact us</h1>
@@ -42,12 +47,7 @@
         </div>
       </div>
       <div class="mini-phone-number"><a href="tel:+447988708750" class="mini-phone-image w-inline-block"><img src="images/phone-icon-white.png" class="mini-image"></a>
-        <p class="phone-text mini w-hidden-medium w-hidden-small w-hidden-tiny">+44 (0) 7988 708 750</p>
-      </div>
-    </div>
-    <div class="social-container-hero-section">
-      <div class="phone-number custom-spacing smaller"><a href="tel:+447988708750" class="phone-image w-inline-block"><img src="images/phone-icon-white.png" class="image"></a>
-        <p class="phone-text w-hidden-medium w-hidden-small w-hidden-tiny">+44 (0) 7988 708 750</p>
+        <p class="phone-text mini w-hidden-small w-hidden-tiny">+44 (0) 7988 708 750</p>
       </div>
     </div><img src="images/WMG-large.png" class="wmg-logo-large"></div>
   <div id="services-section" class="services-container">
@@ -239,22 +239,24 @@ excellent presentation skills to our senior executive.&quot;<br></em>– <strong
     </div>
   </div>
   <div id="contact-section" class="contact-container">
-    <h1 class="section-heading whitesmoke space-below">Contact us</h1>
-    <p class="testmonial-text"><em data-new-link="true">Would you like to find out more about what
+    <div class="w-container">
+      <h1 class="section-heading whitesmoke space-below">Contact us</h1>
+      <p class="testmonial-text"><em data-new-link="true">Would you like to find out more about what
 WeMakeGyms offer? Are you interested in a free initial meeting to discuss your
 project? If so, get in touch.</em></p>
-    <div class="form-wrapper w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" action="https://formspree.io/info@wemakegyms.com" method="post"><label for="name" class="field-label">Name</label><input type="text" id="name" name="name" data-name="Name" placeholder="Enter your name" maxlength="256" class="field-text w-input"><label for="email" class="field-label">Email Address</label><input type="email" class="field-text w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email address" id="email" required=""><label for="field" class="field-label">Message</label><textarea id="field" name="field" placeholder="Enter your message" maxlength="5000" class="field-text w-input"></textarea><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button"></form>
-      <div class="w-form-done">
-        <p>Thank you! Your submission has been received! We&#x27;ll be in contact soon.</p>
+      <div class="form-wrapper w-form">
+        <form id="email-form" name="email-form" data-name="Email Form" action="https://formspree.io/info@wemakegyms.com" method="post"><label for="name" class="field-label">Name</label><input type="text" id="name" name="name" data-name="Name" placeholder="Enter your name" maxlength="256" class="field-text w-input"><label for="email" class="field-label">Email Address</label><input type="email" class="field-text w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email address" id="email" required=""><label for="field" class="field-label">Message</label><textarea id="field" name="field" placeholder="Enter your message" maxlength="5000" class="field-text w-input"></textarea><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button"></form>
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received! We&#x27;ll be in contact soon.</p>
+        </div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form</p>
+        </div>
       </div>
-      <div class="w-form-fail">
-        <p>Oops! Something went wrong while submitting the form</p>
-      </div>
-    </div>
-    <div class="social-container"><a href="https://www.facebook.com/wemakegyms" target="_blank" class="social-button w-inline-block"><img src="images/Social-icons-by-dreamstale-6.png" class="image-4"></a><a href="https://twitter.com/wemakegyms" target="_blank" class="social-button w-inline-block"><img src="images/Social-icons-by-dreamstale-3.png" class="image-3"></a><a href="https://www.instagram.com/wemakegyms/" target="_blank" class="social-button w-inline-block"><img src="images/Social-icons-by-dreamstale-33.png" class="image-2"></a>
-      <div class="phone-number"><a href="tel:+447988708750" class="phone-image w-inline-block"><img src="images/phone-icon-white.png" class="image"></a>
-        <p class="phone-text w-hidden-medium w-hidden-small w-hidden-tiny">+44 (0) 7988 708 750</p>
+      <div class="social-container"><a href="https://www.facebook.com/wemakegyms" target="_blank" class="social-button w-inline-block"><img src="images/Social-icons-by-dreamstale-6.png" class="image-4"></a><a href="https://twitter.com/wemakegyms" target="_blank" class="social-button w-inline-block"><img src="images/Social-icons-by-dreamstale-3.png" class="image-3"></a><a href="https://www.instagram.com/wemakegyms/" target="_blank" class="social-button w-inline-block"><img src="images/Social-icons-by-dreamstale-33.png" class="image-2"></a>
+        <div class="phone-number"><a href="tel:+447988708750" class="phone-image w-inline-block"><img src="images/phone-icon-white.png" class="image"></a>
+          <p class="phone-text w-hidden-medium w-hidden-small w-hidden-tiny">+44 (0) 7988 708 750</p>
+        </div>
       </div>
     </div><a href="#hero-section" class="top-link">TOP</a></div>
   <div class="footer"><a href="#hero-section" class="brand w-clearfix w-nav-brand"><img src="images/wmg-logo-simple.png" class="brand-logo-simple"></a>
