@@ -243,8 +243,16 @@
   line-height: 7px;
 }
 
+.nav-link:active {
+  border-bottom: 0px none transparent;
+}
+
 .nav-link.w--current {
   color: #1471b8;
+}
+
+.nav-link.no-hover-underline:hover {
+  border-style: none;
 }
 
 .services-container {
@@ -263,6 +271,10 @@
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, fixed;
+}
+
+.services-container.transparent-background {
+  background-color: transparent;
 }
 
 .deep-blue-column {
@@ -504,7 +516,7 @@
 
 .testmonial-text {
   display: block;
-  width: 66%;
+  width: 77%;
   margin-right: auto;
   margin-bottom: 44px;
   margin-left: auto;
@@ -1080,6 +1092,55 @@
   letter-spacing: 0em;
 }
 
+.dropdown-link {
+  position: static;
+  margin-top: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.dropdown-link.w--current {
+  color: #333;
+}
+
+._2nd-level-navbar {
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  padding-right: 11px;
+  background-color: #f5f5f5;
+}
+
+._2nd-level-section-heading {
+  margin-top: 11px;
+  margin-bottom: 11px;
+  padding-bottom: 33px;
+  font-family: Oswald, sans-serif;
+  color: #003;
+  font-size: 101px;
+  line-height: 121%;
+  font-weight: 300;
+  text-align: center;
+}
+
+._2nd-level-body-container {
+  padding-top: 99px;
+  padding-bottom: 44px;
+}
+
+.dropdown-list {
+  margin-top: 0px;
+}
+
+.dropdown-list.w--open {
+  margin-top: 0px;
+}
+
+.phone-icon {
+  margin-bottom: 9px;
+}
+
 html.w-mod-js *[data-ix="show-modal"] {
   opacity: 0.33000000000000007;
   -webkit-transform: scale(0.66, 0.66);
@@ -1166,6 +1227,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     font-size: 14px;
   }
   .social-container {
+    position: static;
     display: block;
     width: 666px;
     margin-bottom: 44px;
@@ -1190,10 +1252,14 @@ html.w-mod-js *[data-ix="show-modal"] {
     margin-right: 0px;
   }
   .testmonial-text {
-    width: 66%;
+    width: 77%;
   }
   .contact-div {
+    display: inline;
     width: 66%;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
     text-align: center;
   }
   .services-wrapper {
@@ -1251,6 +1317,15 @@ html.w-mod-js *[data-ix="show-modal"] {
   .mini-image {
     width: 24px;
   }
+  ._2nd-level-section-heading {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 78px;
+  }
+  ._2nd-level-body-container {
+    padding-top: 88px;
+    padding-bottom: 0px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1292,6 +1367,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     line-height: 55px;
   }
   .para-text.x.centre {
+    margin-bottom: 33px;
     font-size: 16px;
     line-height: 20px;
   }
@@ -1342,7 +1418,7 @@ html.w-mod-js *[data-ix="show-modal"] {
   }
   .social-button {
     width: auto;
-    margin-right: 6px;
+    margin-right: 0px;
     margin-left: 21px;
     -webkit-transition-property: none;
     transition-property: none;
@@ -1354,11 +1430,12 @@ html.w-mod-js *[data-ix="show-modal"] {
     transform: none;
   }
   .phone-number {
-    margin-right: 16px;
-    margin-left: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
   }
   .phone-image {
-    margin-right: 0px;
+    margin-right: 6px;
+    margin-left: 21px;
   }
   .phone-image:hover {
     opacity: 1;
@@ -1435,6 +1512,7 @@ html.w-mod-js *[data-ix="show-modal"] {
   }
   .full-width-image {
     margin-top: 44px;
+    margin-bottom: 21px;
   }
   .about-us-text {
     font-size: 16px;
@@ -1515,6 +1593,18 @@ html.w-mod-js *[data-ix="show-modal"] {
   }
   .brand-2.w--current {
     padding-left: 0px;
+  }
+  ._2nd-level-section-heading {
+    padding-bottom: 11px;
+    font-size: 56px;
+  }
+  ._2nd-level-body-container {
+    padding-top: 44px;
+    padding-right: 21px;
+    padding-left: 21px;
+  }
+  .phone-icon {
+    margin-bottom: 8px;
   }
 }
 
@@ -1597,6 +1687,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     padding-left: 0px;
   }
   .social-container {
+    margin-top: 21px;
     margin-right: 0px;
     margin-left: 0px;
     float: none;
@@ -1607,8 +1698,10 @@ html.w-mod-js *[data-ix="show-modal"] {
     margin-left: 11px;
   }
   .phone-number {
-    margin-right: 16px;
-    margin-left: 6px;
+    margin-right: 0px;
+    margin-left: -11px;
+    float: none;
+    text-align: center;
   }
   .phone-image {
     margin-top: 2px;
@@ -1726,6 +1819,15 @@ html.w-mod-js *[data-ix="show-modal"] {
     font-size: 33px;
     text-align: center;
     letter-spacing: 0.05em;
+  }
+  ._2nd-level-section-heading {
+    font-size: 36px;
+  }
+  ._2nd-level-body-container {
+    padding-top: 44px;
+  }
+  .phone-icon {
+    text-align: center;
   }
 }
 
