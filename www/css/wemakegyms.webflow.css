@@ -1100,8 +1100,16 @@
   text-align: center;
 }
 
+.dropdown-link:hover {
+  color: #1471b8;
+}
+
 .dropdown-link.w--current {
   color: #333;
+}
+
+.dropdown-link.w--current:hover {
+  color: #1471b8;
 }
 
 ._2nd-level-navbar {
