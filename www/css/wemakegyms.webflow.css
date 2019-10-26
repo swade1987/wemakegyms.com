@@ -1275,6 +1275,10 @@ html.w-mod-js *[data-ix="show-modal"] {
     float: none;
     text-align: center;
   }
+  .gallery-section {
+    padding-top: 44px;
+    padding-bottom: 0px;
+  }
   .services-wrapper {
     width: 88%;
   }
@@ -1360,6 +1364,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     font-size: 66px;
   }
   .section-heading.bottom-spacer {
+    margin-bottom: 33px;
     padding-bottom: 0px;
     font-size: 66px;
     line-height: 80px;
@@ -1476,6 +1481,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     width: 88px;
     max-width: auto;
     margin-right: auto;
+    margin-bottom: 21px;
     margin-left: auto;
     padding: 0px;
     float: none;
@@ -1642,7 +1648,7 @@ html.w-mod-js *[data-ix="show-modal"] {
   }
   .section-heading.bottom-spacer {
     display: block;
-    margin: 0px auto 20px;
+    margin: 0px auto 33px;
     padding-bottom: 0px;
     font-size: 62px;
     line-height: 74px;
@@ -1730,6 +1736,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     display: block;
     width: 88px;
     margin-right: auto;
+    margin-bottom: 5px;
     margin-left: auto;
     float: none;
     text-align: center;
@@ -1777,6 +1784,7 @@ html.w-mod-js *[data-ix="show-modal"] {
     margin-top: 33px;
   }
   .areas-container {
+    margin-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
   }
