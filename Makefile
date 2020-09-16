@@ -21,7 +21,6 @@ build:
 	docker build -t $(IMAGE) .
 
 push-to-gcr: configure-gcloud-cli
-	docker tag $(IMAGE)
 	gcloud docker -- push $(IMAGE)
 	docker rmi $(IMAGE)
 
