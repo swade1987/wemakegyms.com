@@ -1,42 +1,32 @@
-APP_NAME=wemakegyms
+#------------------------------------------------------------------
+# Project build information
+#------------------------------------------------------------------
+PROJNAME := wemakegyms
 
-QUAY_REPO=swade1987
-QUAY_USERNAME=swade1987
-QUAY_PASSWORD?="unknown"
+GCR_REPO := eu.gcr.io/swade1987
+GCLOUD_SERVICE_KEY ?="unknown"
+GCLOUD_SERVICE_EMAIL := circle-ci@swade1987.iam.gserviceaccount.com
+GOOGLE_PROJECT_ID := swade1987
+GOOGLE_COMPUTE_ZONE := europe-west2-a
 
-CIRCLE_BUILD_NUM?="unknown"
+CIRCLE_BUILD_NUM ?="unknown"
+VERSION := 1.1.$(CIRCLE_BUILD_NUM)
+IMAGE := $(GCR_REPO)/$(PROJNAME):$(VERSION)
 
-SERVER_NAME?="unknown"
-SERVER_USER?="unknown"
-
-# Construct the image tag.
-VERSION=1.1.$(CIRCLE_BUILD_NUM)
-
-# Construct docker image name.
-IMAGE = quay.io/$(QUAY_REPO)/$(APP_NAME):$(VERSION)
+#------------------------------------------------------------------
+# CI targets
+#------------------------------------------------------------------
 
 build:
-	docker build \
-	--build-arg git_repository=`git config --get remote.origin.url` \
-	--build-arg git_branch=`git rev-parse --abbrev-ref HEAD` \
-	--build-arg git_commit=`git rev-parse HEAD` \
-	--build-arg built_on=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-	-t $(IMAGE) .
+	docker build -t $(IMAGE) .
 
-run:
-	docker run -d -p 80:80 $(IMAGE)
-
-login:
-	docker login -u $(QUAY_USERNAME) -p $(QUAY_PASSWORD) quay.io
-
-push:
-	docker push $(IMAGE)
+push-to-gcr: configure-gcloud-cli
+	docker tag $(IMAGE)
+	gcloud docker -- push $(IMAGE)
 	docker rmi $(IMAGE)
 
-test:
-	helm delete --purge $(APP_NAME) && \
-	helm upgrade --install $(APP_NAME) $(APP_NAME) --debug --dry-run
-
-deploy:
-	helm delete --purge $(APP_NAME) && \
-	helm upgrade --install $(APP_NAME) $(APP_NAME) --debug --force
+configure-gcloud-cli:
+	echo '$(GCLOUD_SERVICE_KEY)' | base64 --decode > /tmp/gcloud-service-key.json
+	gcloud auth activate-service-account $(GCLOUD_SERVICE_EMAIL) --key-file=/tmp/gcloud-service-key.json
+	gcloud --quiet config set project $(GOOGLE_PROJECT_ID)
+	gcloud --quiet config set compute/zone $(GOOGLE_COMPUTE_ZONE)
